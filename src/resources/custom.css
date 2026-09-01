@@ -364,6 +364,38 @@ html[data-theme="dark"] .megamenu-item-card {
   box-shadow: none !important;
 }
 
+/* EFEK LOGO IKON BIRU & GLOW SMOOTH SAAT KURSOR MENGARAH KE MENU (HOVER) */
+.megamenu-item-card svg {
+  color: #38bdf8 !important;
+  stroke: #38bdf8 !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, stroke 0.3s ease, filter 0.3s ease !important;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.4)) !important;
+}
+
+.megamenu-item-card:hover svg {
+  color: #38bdf8 !important;
+  stroke: #38bdf8 !important;
+  transform: scale(1.18) translateZ(0);
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.75)) !important;
+}
+
+.megamenu-item-card:hover {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25) !important;
+}
+
+html[data-theme="light"] .megamenu-item-card:hover {
+  border-color: #0284c7 !important;
+  background: #f0f9ff !important;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.2) !important;
+}
+
+html[data-theme="dark"] .megamenu-item-card:hover {
+  border-color: #38bdf8 !important;
+  background: #091724 !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3) !important;
+}
+
 /* EFEK HIJAU KETIKA MENU TERPILIH (ACTIVE CARD & ACTIVE PILL GREEN GLOW EFFECT) */
 .megamenu-item-card.active-card {
   border: 1.5px solid #84cc16 !important;
@@ -396,6 +428,13 @@ html[data-theme="light"] .megamenu-item-card.active-card {
 .megamenu-item-card.active-card svg {
   color: #84cc16 !important;
   stroke: #84cc16 !important;
+  filter: drop-shadow(0 0 8px rgba(132, 204, 22, 0.7)) !important;
+}
+
+.megamenu-item-card.active-card:hover svg {
+  color: #84cc16 !important;
+  stroke: #84cc16 !important;
+  filter: drop-shadow(0 0 12px rgba(132, 204, 22, 0.9)) !important;
 }
 
 /* Pola Square Grid Texture (Linear-Gradient Grid 20px x 20px) Persis Gambar Referensi 2 */
