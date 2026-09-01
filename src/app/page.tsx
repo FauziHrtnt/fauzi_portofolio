@@ -157,8 +157,6 @@ export default function Home() {
                   flexDirection: "column",
                   justifyContent: "space-between",
                   minHeight: "220px",
-                  background: "var(--card-solid-bg, #0d1117)",
-                  border: "1px solid var(--card-border, rgba(255, 255, 255, 0.08))",
                 }}
               >
                 <div>
@@ -242,8 +240,6 @@ export default function Home() {
                   flexDirection: "column",
                   justifyContent: "space-between",
                   minHeight: "220px",
-                  background: "var(--card-solid-bg, #0d1117)",
-                  border: "1px solid var(--card-border, rgba(255, 255, 255, 0.08))",
                 }}
               >
                 <div>

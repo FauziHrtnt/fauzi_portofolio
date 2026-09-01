@@ -340,8 +340,6 @@ html[data-theme="dark"] {
 /* Bento Item Card Style (Presisi 100% Solid & Kontras Tinggi di Semua Theme) */
 .megamenu-item-card {
   width: 100% !important;
-  background: var(--card-solid-bg, #0d1117) !important;
-  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08)) !important;
   border-radius: 18px;
   padding: 16px;
   display: flex;
@@ -352,6 +350,18 @@ html[data-theme="dark"] {
   box-sizing: border-box;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s ease !important;
   cursor: pointer;
+}
+
+html[data-theme="light"] .megamenu-item-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-theme="dark"] .megamenu-item-card {
+  background: #0d1117 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
 }
 
 html[data-theme="dark"] .megamenu-item-card {
