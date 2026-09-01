@@ -185,7 +185,7 @@ export default function Home() {
                         color: "var(--card-desc-color, rgba(255, 255, 255, 0.5))",
                       }}
                     >
-                      2024 – Sekarang
+                      2022 – 2026
                     </span>
                   </div>
 
@@ -198,7 +198,7 @@ export default function Home() {
                       lineHeight: "135%",
                     }}
                   >
-                    CAD &amp; IT Staff – PT. Pola Paperindo Evaluindo
+                    Production Engineering KHS &amp; Programmer PT. Indo Techno Medic
                   </h4>
 
                   <p
@@ -209,7 +209,7 @@ export default function Home() {
                       margin: 0,
                     }}
                   >
-                    Pengembangan &amp; pemeliharaan sistem perangkat lunak, perancangan 3D CAD (Jig &amp; Fixture), manajemen basis data, serta penyusunan dokumentasi SOP.
+                    Pengembangan sistem inventaris berbasis web (CodeIgniter 3 &amp; MySQL), perancangan CAD 3D (Jig &amp; Fixture), serta penyusunan 15+ dokumen SOP manufaktur.
                   </p>
                 </div>
 

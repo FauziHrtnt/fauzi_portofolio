@@ -27,7 +27,7 @@ Dikembangkan menggunakan **Next.js (App Router)**, **TypeScript**, dan **Once UI
    - Ringkasan Bahasa Pemrograman Utama (PHP, Java, Python, MySQL).
 
 3. **💼 Riwayat Pengalaman & Karir (`/experience`)**:
-   - Timeline Pengalaman Kerja Profesional (CAD & IT Staff PT. Pola Paperindo Evaluindo) serta Keorganisasian & Kepemimpinan (Himpunan Mahasiswa Informasi UTY & Tim Riset Teknologi).
+   - Timeline Pengalaman Kerja Profesional (Production Engineering KHS & Programmer PT. Indo Techno Medic) serta Keorganisasian & Kepemimpinan (Himpunan Mahasiswa Informasi UTY & Tim Riset Teknologi).
 
 4. **🚀 Koleksi Proyek & Karya Utama (`/work`)**:
    - Showcase proyek unggulan (AI Stock Signal Scanner, My Asset Tracker, Sistem Manajemen Inventaris Web, dan Aplikasi Kasgo Simpan Pinjam RT05).
