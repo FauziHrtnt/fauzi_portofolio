@@ -364,8 +364,38 @@ html[data-theme="dark"] .megamenu-item-card {
   box-shadow: none !important;
 }
 
-html[data-theme="dark"] .megamenu-item-card {
-  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+/* EFEK HIJAU KETIKA MENU TERPILIH (ACTIVE CARD & ACTIVE PILL GREEN GLOW EFFECT) */
+.megamenu-item-card.active-card {
+  border: 1.5px solid #84cc16 !important;
+  box-shadow: 0 0 24px rgba(132, 204, 22, 0.35), inset 0 0 16px rgba(132, 204, 22, 0.12) !important;
+}
+
+html[data-theme="dark"] .megamenu-item-card.active-card {
+  border: 1.5px solid #84cc16 !important;
+  background: #101c10 !important;
+  box-shadow: 0 0 25px rgba(132, 204, 22, 0.35), inset 0 0 20px rgba(132, 204, 22, 0.15) !important;
+}
+
+html[data-theme="light"] .megamenu-item-card.active-card {
+  border: 1.5px solid #84cc16 !important;
+  background: #f4fce3 !important;
+  box-shadow: 0 4px 20px rgba(132, 204, 22, 0.3) !important;
+}
+
+/* GREEN ACTIVE DOT & ACCENT STYLING */
+.green-active-dot {
+  color: #84cc16 !important;
+  text-shadow: 0 0 8px rgba(132, 204, 22, 0.8) !important;
+  display: inline-block;
+}
+
+.megamenu-item-card.active-card .card-title {
+  color: #84cc16 !important;
+}
+
+.megamenu-item-card.active-card svg {
+  color: #84cc16 !important;
+  stroke: #84cc16 !important;
 }
 
 /* Pola Square Grid Texture (Linear-Gradient Grid 20px x 20px) Persis Gambar Referensi 2 */
