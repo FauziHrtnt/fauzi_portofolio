@@ -47,6 +47,11 @@ const home: Home = {
   title: `${person.name} – Software Developer`,
   description: `Portofolio profesional ${person.name} sebagai ${person.role}`,
   headline: <>Software Developer & System Architect</>,
+  subline: (
+    <>
+      Saya {person.name}, mahasiswa Sistem Informasi UTY (IPK 3.73) dengan pola pikir keteknikan yang berfokus pada pemecahan masalah secara presisi, perancangan arsitektur sistem, pengembangan aplikasi Web (PHP CodeIgniter 3 & MySQL), serta Aplikasi Mobile Android Native (Java & Jetpack Compose).
+    </>
+  ),
   featured: {
     display: true,
     title: (
@@ -54,17 +59,12 @@ const home: Home = {
         <strong className="ml-4">My Asset</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Tugas Akhir
+          Tugas Akhir Android Native Java &amp; RESTful API
         </Text>
       </Row>
     ),
     href: "/work/my-asset-aplikasi-pelacak-aset",
   },
-  subline: (
-    <>
-      Saya {person.name}, mahasiswa Sistem Informasi UTY (IPK 3.73) yang berfokus pada pemecahan masalah secara presisi, perancangan arsitektur sistem, pengembangan aplikasi Web (PHP CodeIgniter 3 & MySQL), serta Aplikasi Mobile Android Native (Java & Jetpack Compose).
-    </>
-  ),
 };
 
 const about: About = {
@@ -133,31 +133,9 @@ const about: About = {
         timeframe: "Feb 2026",
         role: "Freelance Data Entry – Investigasi Kontak Tuberkulosis (TBC)",
         achievements: [
-          "Bertanggung jawab melakukan input data rekam medis pasien terkait penelusuran Tuberkulosis (TBC) langsung ke dalam sistem basis data terpusat Puskesmas Wates.",
+          "Bertanggung jawab melakukan input data rekam medis pasien terkait penelusuran Tuberkulosis (TBC) langsung ke dalam sistem basis data (web) terpusat Puskesmas Wates.",
           "Memvalidasi puluhan entri Nomor Induk Kependudukan (NIK) dan detail alamat berdasarkan formulir fisik untuk memastikan keakuratan data kesehatan pasien sebelum diunggah ke portal.",
-          "Bekerja secara mandiri mengikuti Prosedur Operasi Standar (SOP) dan panduan digitalisasi data yang ditetapkan oleh pihak Puskesmas Wates, menjaga kerahasiaan dan integritas data pasien.",
-        ],
-        images: [],
-      },
-      {
-        company: "Puskesmas Wates, Kulon Progo",
-        timeframe: "Des 2024",
-        role: "Freelance Data Input – Proyek STBM (Sanitasi Total Berbasis Masyarakat)",
-        achievements: [
-          "Mentranskripsikan ratusan lembar data survei lapangan (formulir ceklis) milik petugas lapangan ke dalam format matriks Excel untuk rekapitulasi tahunan STBM.",
-          "Mengklasifikasikan data warga (ratusan KK dan NIK) ke dalam 5 Pilar STBM (Stop BABS, Cuci Tangan Pakai Sabun, Pengelolaan Air Minum, Pengelolaan Sampah, dan Pengelolaan Limbah Cair).",
-          "Menjaga konsistensi entri data indikator fasilitas sanitasi dan kondisi rumah (sumber air bersih, SPAL, ventilasi) guna mempermudah petugas medis dalam menganalisis peta sanitasi masyarakat di wilayah kerja Puskesmas.",
-        ],
-        images: [],
-      },
-      {
-        company: "Puskesmas Wates, Kulon Progo",
-        timeframe: "Jun 2023 – Jan 2024",
-        role: "Freelance Data Input – Proyek PHBS (Perilaku Hidup Bersih dan Sehat)",
-        achievements: [
-          "Melakukan digitalisasi dan pemrosesan data survei lapangan dari format kertas (kuesioner) ke dalam format spreadsheet Excel (ratusan baris data per kalurahan).",
-          "Mengevaluasi dan mengklasifikasikan data warga (ratusan NIK) berdasarkan 13 parameter indikator PHBS (sarana air bersih, kepemilikan jamban sehat, pengelolaan limbah, hingga kebiasaan merokok) untuk menentukan kategori kelayakan (Ber-PHBS / Belum Ber-PHBS).",
-          "Menyusun laporan rekapitulasi data demografi dan indikator kesehatan lingkungan (Kondisi Rumah, Sarana Air Bersih, Pembuangan Sampah) dengan tingkat akurasi tinggi guna mendukung program intervensi kesehatan Puskesmas.",
+          "Bekerja secara mandiri mengikuti prosedur operasi standar (SOP) dan panduan digitalisasi data yang ditetapkan oleh pihak Puskesmas Wates, menjaga kerahasiaan dan integritas data pasien.",
         ],
         images: [],
       },
@@ -204,7 +182,7 @@ const about: About = {
         ],
         images: [
           {
-            src: "/images/gallery/FBB-1.JPG",
+            src: "/images/gallery/FBB-1.jpg",
             alt: "Dokumentasi Volunteer FBB UIN Sunan Kalijaga 1",
             width: 16,
             height: 9,
@@ -218,9 +196,31 @@ const about: About = {
         ],
       },
       {
+        company: "Puskesmas Wates, Kulon Progo",
+        timeframe: "Des 2024",
+        role: "Freelance Data Entry – Proyek STBM (Sanitasi Total Berbasis Masyarakat)",
+        achievements: [
+          "Mentranskripsikan ratusan lembar data survei lapangan (formulir ceklis) milik petugas lapangan ke dalam format matriks Excel untuk rekapitulasi tahunan STBM.",
+          "Mengklasifikasikan data warga (ratusan KK dan NIK) ke dalam 5 Pilar STBM (Stop BABS, Cuci Tangan Pakai Sabun, Pengelolaan Air Minum, Pengelolaan Sampah, dan Pengelolaan Limbah Cair).",
+          "Menjaga konsistensi entri data indikator fasilitas sanitasi dan kondisi rumah (sumber air bersih, SPAL, ventilasi) guna mempermudah petugas medis dalam menganalisis peta sanitasi masyarakat di wilayah kerja Puskesmas.",
+        ],
+        images: [],
+      },
+      {
+        company: "Puskesmas Wates, Kulon Progo",
+        timeframe: "Jun 2023 – Jan 2024",
+        role: "Freelance Data Entry – Proyek PHBS (Perilaku Hidup Bersih dan Sehat)",
+        achievements: [
+          "Melakukan digitalisasi dan pemrosesan data survei lapangan dari format kertas (kuesioner) ke dalam format spreadsheet Excel (ratusan baris data per kalurahan).",
+          "Mengevaluasi dan mengklasifikasikan data warga (ratusan NIK) berdasarkan 13 parameter indikator PHBS (sarana air bersih, kepemilikan jamban sehat, pengelolaan limbah, hingga kebiasaan merokok) untuk menentukan kategori kelayakan (Ber-PHBS / Belum Ber-PHBS).",
+          "Menyusun laporan rekapitulasi data demografi dan indikator kesehatan lingkungan (Kondisi Rumah, Sarana Air Bersih, Pembuangan Sampah) dengan tingkat akurasi tinggi guna mendukung program intervensi kesehatan Puskesmas.",
+        ],
+        images: [],
+      },
+      {
         company: "CV. Karya Hidup Sentosa",
         timeframe: "Agu 2022 – Okt 2022",
-        role: "Production Engineering",
+        role: "Production Engineering Staff",
         documentUrl: "/documents/SK KERJA FAUZI HARTANTO P1602.pdf",
         documentName: "SK Kerja Resmi (PDF)",
         achievements: [
@@ -238,15 +238,15 @@ const about: About = {
     institutions: [
       {
         name: "Universitas Teknologi Yogyakarta (UTY)",
-        description: "Diploma (D3) Sistem Informasi | IPK: 3.73 / 4.00 (Sep 2023 – Aug 2026). Mata Kuliah Relevan: Desain Antarmuka Pengguna (UI/UX), Interaksi Manusia-Komputer, Analisis & Perancangan Sistem, Manajemen Basis Data.",
+        description: "Diploma (D3) Sistem Informasi | IPK: 3.73 / 4.00 (Sep 2023 – Aug 2026). Mata Kuliah Relevan: Desain Antarmuka Pengguna, Interaksi Manusia-Komputer, Analisis & Perancangan Sistem, Manajemen Basis Data.",
       },
       {
         name: "SMK Negeri 2 Pengasih",
-        description: "Teknik Mesin | Nilai Akhir: 92.41 / 100 (Jun 2019 – Jun 2022). Mata Kuliah Relevan: CAD 3D (Solid Edge), Gambar Teknik, Proses Manufaktur, Pemesinan Presisi, Kontrol Kualitas & SOP.",
+        description: "Teknik Mesin | Nilai Akhir: 92.41 / 100 (Jun 2019 – Jun 2022). Mata Kuliah Relevan: Desain Berbantuan Komputer (CAD/Solid Edge), Gambar Teknik, Proses Manufaktur, Pemesinan Presisi, Kontrol Kualitas & Prosedur Operasi Standar (SOP).",
       },
       {
         name: "English Proficiency Test (EPT / TOEFL)",
-        description: "Sertifikasi Bahasa Inggris UTY Center (Feb 2026 – Feb 2028). Total Skor: 487 (Structure & Written Expression: 530, Reading Comprehension: 500).",
+        description: "Sertifikasi Bahasa Inggris UTY Center (Feb 2026 – Feb 2028). Total Skor: 487 (Structure: 530, Reading: 500).",
         documentUrl: "/documents/TOEFL_3233111019_Fauzi Hartanto.pdf",
         documentName: "Sertifikat EPT TOEFL (PDF)",
       },
@@ -254,16 +254,17 @@ const about: About = {
   },
   technical: {
     display: true,
-    title: "Keahlian Teknis & Bahasa",
+    title: "Keahlian Teknis & Spesifikasi",
     skills: [
       {
         title: "Programming & Tech Stack",
-        description: "Mahir dalam PHP, CodeIgniter 3 (CI3), Java (Android), SQL, HTML, CSS, JavaScript, dan Android Studio.",
+        description: "PHP, CodeIgniter 3 (CI3), Java (Android), SQL, HTML, CSS, JavaScript, dan Android Studio.",
         tags: [
           { name: "PHP", icon: "javascript" },
           { name: "CodeIgniter 3", icon: "nextjs" },
           { name: "Java (Android)", icon: "javascript" },
-          { name: "SQL / MySQL", icon: "supabase" },
+          { name: "SQL", icon: "supabase" },
+          { name: "Android Studio", icon: "figma" },
         ],
         images: [
           {
@@ -276,7 +277,7 @@ const about: About = {
       },
       {
         title: "Database & Architecture",
-        description: "Perancangan skema database relasional (ERD), RESTful API Integration (JSON), User Flow Mapping, dan penyiapan arsitektur Clean & MVVM.",
+        description: "MySQL, Relational Database Schema (ERD), RESTful API Integration, User Flow Mapping, Clean Architecture, dan MVVM Pattern.",
         tags: [
           { name: "MySQL ERD", icon: "supabase" },
           { name: "RESTful API", icon: "nextjs" },
@@ -297,7 +298,7 @@ const about: About = {
         tags: [
           { name: "Figma", icon: "figma" },
           { name: "Jetpack Compose", icon: "figma" },
-          { name: "Material UI", icon: "figma" },
+          { name: "Wireframing", icon: "figma" },
         ],
         images: [
           {
@@ -309,14 +310,12 @@ const about: About = {
         ],
       },
       {
-        title: "Engineering Tools & Hardware",
-        description: (
-          <>Git/GitHub, Solid Edge (3D Jig & Fixture Design), Microsoft Excel (Data Management), dan Dokumentasi SOP.</>
-        ),
+        title: "Engineering & Tools",
+        description: "Git/GitHub, Solid Edge (3D Jig & Fixture Design), Microsoft Excel (Data Management), dan Prosedur Operasi Standar (SOP).",
         tags: [
           { name: "Git / GitHub", icon: "github" },
           { name: "Solid Edge 3D", icon: "figma" },
-          { name: "SOP & ISO", icon: "threads" },
+          { name: "MS Excel", icon: "threads" },
         ],
         images: [],
       },
