@@ -1,0 +1,730 @@
+/* :root {
+  /*
+  /* Override default variables here */
+/*
+  --font-size-display-multiplier:   1;
+  --font-size-heading-multiplier:   1;
+  --font-size-body-multiplier:      1;
+  --font-size-label-multiplier:     1;
+
+  --line-height-display-multiplier: 1;
+  --line-height-heading-multiplier: 1;
+  --line-height-body-multiplier:    1;
+  --line-height-label-multiplier:   1;
+
+  --default-border:        var(--neutral-border-medium);
+
+  /*
+  /* Example setup for custom colors */
+/* Generate at: https://once-ui.com/customize */
+/*
+  --scheme-brand-100: #08002f;
+  --scheme-brand-200:  #04025c;
+  --scheme-brand-300:  #1f398e;
+  --scheme-brand-400:  #3856ae;
+  --scheme-brand-500:  #5071cc;
+  --scheme-brand-600:  #6f94f1;
+  --scheme-brand-700:  #8db3ff;
+  --scheme-brand-800:  #b2dbff;
+  --scheme-brand-900:  #bfe8ff;
+  --scheme-brand-1000: #ccf6ff;
+  --scheme-brand-1100: #d2fcff;
+  --scheme-brand-1200: #d2fcff;
+  --scheme-brand-600-10: rgba(111,148,241,0.1);
+  --scheme-brand-600-30: rgba(111,148,241,0.3);
+  --scheme-brand-600-50: rgba(111,148,241,0.5);
+
+  --scheme-accent-100:  #030b10;
+  --scheme-accent-200:  #0d181d;
+  --scheme-accent-300:  #364248;
+  --scheme-accent-400:  #505d64;
+  --scheme-accent-500:  #69777e;
+  --scheme-accent-600:  #8a989f;
+  --scheme-accent-700:  #a8b7bf;
+  --scheme-accent-800:  #c8d7df;
+  --scheme-accent-900:  #d5e4ec;
+  --scheme-accent-1000: #e2f1f9;
+  --scheme-accent-1100: #e9f8ff;
+  --scheme-accent-1200: #efffff;
+  --scheme-accent-600-10: rgba(138,152,159,0.1);
+  --scheme-accent-600-30: rgba(138,152,159,0.3);
+  --scheme-accent-600-50: rgba(138,152,159,0.5);
+
+  --scheme-neutral-100:  #020b10;
+  --scheme-neutral-200:  #0b181d;
+  --scheme-neutral-300:  #344248;
+  --scheme-neutral-400:  #4f5d64;
+  --scheme-neutral-500:  #68777e;
+  --scheme-neutral-600:  #89989f;
+  --scheme-neutral-700:  #a7b7be;
+  --scheme-neutral-800:  #c7d7df;
+  --scheme-neutral-900:  #d4e4ec;
+  --scheme-neutral-1000: #e1f2f9;
+  --scheme-neutral-1100: #e7f8ff;
+  --scheme-neutral-1200: #eeffff;
+  --scheme-neutral-600-10: rgba(137,152,159,0.1);
+  --scheme-neutral-600-30: rgba(137,152,159,0.3);
+  --scheme-neutral-600-50: rgba(137,152,159,0.5);
+  /*
+}*/
+
+/* Carousel & Image Styling for Mobile App Screenshots */
+.carousel-image-fit img,
+div[class*="Carousel"] img,
+div[class*="carousel"] img {
+  object-fit: contain !important;
+  background-color: var(--neutral-alpha-weak, rgba(0, 0, 0, 0.4));
+  padding: 12px;
+}
+
+/* Global Text Justification & Super Smooth Scroll */
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p,
+li,
+article p,
+section p,
+div[class*="Text"] {
+  text-align: justify;
+}
+
+/* Super Smooth Scroll Shift Transitions */
+.smooth-shift {
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Global Page Top Offset to prevent Header clipping across ALL pages */
+main,
+article,
+div[class*="Column"][maxWidth],
+div[class*="Flex"][maxWidth] {
+  padding-top: 100px !important;
+}
+
+/* Card Stacking, Solid 100% Opaque Background & Interactive Hover Glow Elevation */
+div[data-background="surface"],
+div[class*="surface"],
+article,
+section {
+  position: relative;
+  z-index: 2;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  /* Nonaktifkan transparansi glassmorphism agar background glow tidak tembus pandang */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Solid Background Khusus Tema Dark */
+html[data-theme="dark"] div[data-background="surface"],
+html[data-theme="dark"] div[class*="surface"] {
+  background-color: #0d1117 !important;
+}
+
+/* Solid Background Khusus Tema Light (Cegah background glow tembus ke teks) */
+html[data-theme="light"] div[data-background="surface"],
+html[data-theme="light"] div[class*="surface"] {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Interactive Card Hover Animation */
+div[data-background="surface"]:hover,
+div[class*="surface"]:hover {
+  transform: translateY(-4px) scale(1.006);
+  border-color: var(--brand-solid-strong, #3b82f6) !important;
+  box-shadow: 0 16px 36px -10px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* ==========================================================================
+   HEADER & BENTO MEGA-MENU STYLING (DARK / LIGHT GLASSMORPHISM)
+   ========================================================================== */
+
+/* Dark Mode Theme Variables for Header */
+html[data-theme="dark"] {
+  --header-pill-bg: rgba(13, 17, 23, 0.85);
+  --header-pill-border: rgba(255, 255, 255, 0.12);
+  --header-text-color: rgba(255, 255, 255, 0.85);
+  --header-nav-bg: rgba(255, 255, 255, 0.08);
+  --header-active-bg: rgba(255, 255, 255, 0.18);
+  --header-active-color: #ffffff;
+  --header-btn-bg: rgba(255, 255, 255, 0.08);
+  --header-btn-border: rgba(255, 255, 255, 0.12);
+  --megamenu-bg: rgba(22, 27, 34, 0.95);
+  --megamenu-border: rgba(255, 255, 255, 0.12);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-title-color: #ffffff;
+  --card-desc-color: rgba(255, 255, 255, 0.65);
+}
+
+/* Light Mode Theme Variables for Header */
+html[data-theme="light"] {
+  --header-pill-bg: rgba(255, 255, 255, 0.92);
+  --header-pill-border: rgba(0, 0, 0, 0.1);
+  --header-text-color: #475569;
+  --header-nav-bg: rgba(0, 0, 0, 0.05);
+  --header-active-bg: #0f172a;
+  --header-active-color: #ffffff;
+  --header-btn-bg: #ffffff;
+  --header-btn-border: rgba(0, 0, 0, 0.1);
+  --megamenu-bg: rgba(255, 255, 255, 0.98);
+  --megamenu-border: rgba(0, 0, 0, 0.1);
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --card-border: rgba(0, 0, 0, 0.06);
+  --card-title-color: #0f172a;
+  --card-desc-color: #64748b;
+}
+
+/* Header Container Background (No border to prevent scroll flickering bug) */
+.header-pill-container {
+  border: none !important;
+  outline: none !important;
+}
+
+.header-pill-container.is-scrolled {
+  background: var(--header-pill-bg, rgba(13, 17, 23, 0.85)) !important;
+  border: none !important;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.3) !important;
+  color: var(--header-text-color, #ffffff) !important;
+}
+
+.header-pill-container.at-top {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  color: var(--header-text-color, #ffffff) !important;
+}
+
+/* Clock 3D Timbul Hover Effect */
+.clock-timbul-pill:hover {
+  transform: scale(1.08) translateY(-2px) !important;
+  background: var(--header-btn-bg, rgba(255, 255, 255, 0.12)) !important;
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3) !important;
+  border: 1px solid var(--brand-solid-strong, #3b82f6) !important;
+}
+
+/* RADIAL CIRCLE RIPPLE EXPANSION CLICK EFFECT */
+.circle-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, rgba(147, 51, 234, 0.3) 40%, rgba(59, 130, 246, 0) 75%);
+  transform: scale(0);
+  animation: circle-expand 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes circle-expand {
+  0% {
+    transform: scale(0);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* TEXT GLOWING & POPUP HOVER EFFECT (TANPA CARD BOX / TANPA BORDER SAAT HOVER) */
+.nav-glow-link {
+  position: relative;
+  color: var(--header-text-color, rgba(255, 255, 255, 0.75)) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, text-shadow 0.3s ease !important;
+}
+
+.nav-glow-link:hover {
+  color: #ffffff !important;
+  transform: scale(1.14) translateY(-3px) !important;
+  text-shadow: 0 0 14px rgba(59, 130, 246, 0.95), 0 0 28px rgba(59, 130, 246, 0.7), 0 0 42px rgba(147, 51, 234, 0.5) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* PROFILE CLIP WHITE TAB POP HOVER EFFECT */
+.profile-clip-tab {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background 0.3s ease !important;
+}
+
+.profile-clip-tab:hover {
+  transform: translateX(8px) scale(1.06) !important;
+  box-shadow: 0 16px 45px rgba(59, 130, 246, 0.35), 0 0 0 2px rgba(59, 130, 246, 0.4) !important;
+  background: #ffffff !important;
+}
+
+.social-clip-btn:hover {
+  transform: scale(1.15) !important;
+  background: var(--brand-solid-strong, #3b82f6) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4) !important;
+}
+
+/* GREEN ACTIVE DOT & ACTIVE PILL INDICATOR */
+.green-active-dot {
+  color: #84cc16 !important;
+  font-size: 10px !important;
+  display: inline-block;
+  line-height: 1;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+.nav-glow-link.active-pill {
+  color: var(--header-active-color, #ffffff) !important;
+  font-weight: 700 !important;
+  background: var(--header-active-bg, rgba(255, 255, 255, 0.12)) !important;
+  border: 1px solid var(--header-active-border, rgba(255, 255, 255, 0.18)) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ACTIVE CARD IN MEGA-MENU (MATCHING REFERENSI SCREENSHOT 1 & 2) */
+.megamenu-item-card.active-card {
+  border: 1px solid #84cc16 !important;
+  background: rgba(132, 204, 22, 0.08) !important;
+  box-shadow: 0 0 20px rgba(132, 204, 22, 0.2) !important;
+}
+
+html[data-theme="light"] .megamenu-item-card.active-card {
+  border: 1px solid #84cc16 !important;
+  background: rgba(132, 204, 22, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(132, 204, 22, 0.25) !important;
+}
+
+/* Theme-Aware Card Title, Description, & Solid Background Color Tokens */
+html[data-theme="light"] {
+  --card-title-color: #0f172a !important;
+  --card-desc-color: #475569 !important;
+  --card-solid-bg: #ffffff !important;
+  --card-solid-hover-bg: #f8fafc !important;
+  --card-border: rgba(15, 23, 42, 0.12) !important;
+  --card-badge-bg: rgba(15, 23, 42, 0.06) !important;
+  --card-badge-color: #1e293b !important;
+}
+
+html[data-theme="dark"] {
+  --card-title-color: #ffffff !important;
+  --card-desc-color: rgba(255, 255, 255, 0.7) !important;
+  --card-solid-bg: #0d1117 !important;
+  --card-solid-hover-bg: #161b22 !important;
+  --card-border: rgba(255, 255, 255, 0.08) !important;
+  --card-badge-bg: rgba(255, 255, 255, 0.08) !important;
+  --card-badge-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Bento Item Card Style (Presisi 100% Solid & Kontras Tinggi di Semua Theme) */
+.megamenu-item-card {
+  width: 100% !important;
+  background: var(--card-solid-bg, #0d1117) !important;
+  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08)) !important;
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s ease !important;
+  cursor: pointer;
+}
+
+html[data-theme="dark"] .megamenu-item-card {
+  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+}
+
+/* Pola Square Grid Texture (Linear-Gradient Grid 20px x 20px) Persis Gambar Referensi 2 */
+.megamenu-item-card.hero-style {
+  width: 100% !important;
+  height: 140px !important;
+  min-height: 140px !important;
+  padding: 20px !important;
+  border-radius: 20px !important;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+}
+
+html[data-theme="dark"] .megamenu-item-card.hero-style {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px) !important;
+}
+
+.megamenu-item-card.compact-style {
+  width: 100% !important;
+  height: 72px !important;
+  padding: 12px 14px !important;
+  border-radius: 18px !important;
+}
+
+.megamenu-item-card.side-style {
+  width: 100% !important;
+  height: 68px !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px 18px !important;
+  border-radius: 18px !important;
+}
+
+/* Dynamic Hover Scale & Elevation Animation for Mega-Menu Cards */
+.megamenu-item-card:hover {
+  transform: translateY(-5px) scale(1.035) !important;
+  border-color: var(--brand-solid-strong, #3b82f6) !important;
+  box-shadow: 0 20px 40px -12px rgba(59, 130, 246, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.4) !important;
+  background: var(--neutral-alpha-weak, rgba(59, 130, 246, 0.08)) !important;
+}
+
+.megamenu-item-card .card-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--card-title-color, #0f172a);
+}
+
+.megamenu-item-card .card-desc {
+  font-size: 12px;
+  color: var(--card-desc-color, #64748b);
+  margin-top: 2px;
+  line-height: 140%;
+}
+
+.megamenu-item-card .card-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--brand-solid-strong, #3b82f6);
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.header-action-btn:hover {
+  transform: scale(1.1);
+  border-color: var(--brand-solid-strong, #3b82f6) !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* ==========================================================================
+   SCROLL-REVEAL SYSTEM (referensi animasi gulir dari video)
+   Dipakai bareng komponen <Reveal> — elemen fade-up + sedikit scale saat
+   masuk viewport, lalu berhenti (tidak diulang) supaya scroll terasa halus.
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(48px) scale(0.985);
+  filter: blur(6px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Stagger helper: tambahkan salah satu class ini pada child yang ingin
+   muncul berurutan (mis. kartu-kartu dalam grid) */
+.reveal-d1 {
+  transition-delay: 0.08s;
+}
+
+.reveal-d2 {
+  transition-delay: 0.16s;
+}
+
+.reveal-d3 {
+  transition-delay: 0.24s;
+}
+
+.reveal-d4 {
+  transition-delay: 0.32s;
+}
+
+.reveal-d5 {
+  transition-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   HERO ENTRANCE ANIMATION (baris judul raksasa muncul bertahap dari bawah,
+   persis nuansa "AI & DATA / SOFTWARE / ENGINEER" pada video referensi)
+   ========================================================================== */
+
+@keyframes heroLineUp {
+  from {
+    opacity: 0;
+    transform: translateY(64px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-line {
+  opacity: 0;
+  animation: heroLineUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-line-1 {
+  animation-delay: 0.05s;
+}
+
+.hero-line-2 {
+  animation-delay: 0.2s;
+}
+
+.hero-line-3 {
+  animation-delay: 0.35s;
+}
+
+.hero-fade {
+  opacity: 0;
+  animation: heroFadeIn 1s ease forwards;
+}
+
+.hero-fade-d1 {
+  animation-delay: 0.55s;
+}
+
+.hero-fade-d2 {
+  animation-delay: 0.7s;
+}
+
+.hero-fade-d3 {
+  animation-delay: 0.85s;
+}
+
+.hero-fade-d4 {
+  animation-delay: 1s;
+}
+
+/* Floating social icons: gerak naik-turun halus supaya hero terasa hidup */
+@keyframes floatSoft {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero-float {
+  animation: floatSoft 4.5s ease-in-out infinite;
+}
+
+.hero-float-slow {
+  animation: floatSoft 6s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+/* ==========================================================================
+   STICKY "PEEL" TRANSITION antara Hero dan konten berikutnya.
+   Hero tetap terpaku (sticky) di layar, lalu section berikutnya "menutup"
+   dari bawah dengan sudut membulat — efek utama yang terlihat di video
+   ketika berpindah dari hero ke section statistik.
+   ========================================================================== */
+
+body {
+  overflow-x: clip !important;
+}
+
+.hero-sticky-section {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.content-peel-section {
+  position: relative;
+  z-index: 2;
+  background: var(--page-background, #030405);
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 -60px 90px -20px rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+html[data-theme="dark"] .content-peel-section {
+  background: #05070a;
+}
+
+html[data-theme="light"] .content-peel-section {
+  background: #ffffff;
+  box-shadow: 0 -60px 90px -20px rgba(0, 0, 0, 0.15);
+}
+
+/* Wrapper di DALAM content-peel-section supaya teks & grid tetap rapi
+   di tengah (tidak mepet tepi layar) meskipun panel-nya sendiri full-bleed */
+.content-peel-inner {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   MARQUEE — dua baris teks/tech-stack bergerak berlawanan arah tanpa henti,
+   meniru pita "SOFTWARE ENGINEER • AI ENGINEER • ..." pada video referensi.
+   ========================================================================== */
+
+.marquee-row {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.marquee-track.marquee-reverse {
+  animation-direction: reverse;
+  animation-duration: 38s;
+}
+
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-row:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--card-title-color, #ffffff);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.marquee-item .marquee-icon {
+  font-size: 15px;
+}
+
+.marquee-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #84cc16;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   STAT CARD — angka statistik dengan hover glow tipis (section
+   "PROFESSIONAL STATISTICS" ala video, versi tema portofolio Anda)
+   ========================================================================== */
+
+.stat-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   TIMELINE HORIZONTAL — garis "Professional Journey" dengan titik yang
+   menyala saat masuk viewport
+   ========================================================================== */
+
+.timeline-dot {
+  transition: background 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-dot.is-visible {
+  background: #84cc16 !important;
+  box-shadow: 0 0 0 6px rgba(132, 204, 22, 0.15);
+  transform: scale(1.15);
+}
+
+.timeline-line-fill {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-line-fill.is-visible {
+  transform: scaleX(1);
+}

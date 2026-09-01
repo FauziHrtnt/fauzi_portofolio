@@ -1,0 +1,43 @@
+---
+title: "AI Stock Signal Scanner – BEI Stock Analytics & Telegram Signal Engine"
+publishedAt: "2026-08-15"
+summary: "Proyek Sistem Mandiri: Engine scanner & analisis sinyal saham otomatis berbasis AI & algoritma teknikal untuk 800+ emiten Bursa Efek Indonesia (BEI), dilengkapi 5-factor scoring engine, risk management otomatis, dan integrasi Bot Telegram."
+images:
+  - "/images/projects/stock-scanner/cover.png"
+team:
+  - name: "Fauzi Hartanto"
+    role: "Backend & Systems Architect"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://linkedin.com/in/fauzihartanto14"
+link: "https://github.com/FauziHrtnt"
+---
+
+## Overview Projek (Proyek Mandiri)
+
+**AI Stock Signal Scanner Indonesia** (`ai-stock-signal-be`) adalah sistem scanner & analisis sinyal saham otomatis yang memindai seluruh emiten terdaftar di Bursa Efek Indonesia (BEI / IDX) secara *real-time*. Sistem ini memanfaatkan analisis teknikal *multi-timeframe*, algoritma *scoring* kuantitafif, dan kecerdasan buatan (AI) untuk menyaring kandidat saham berpotensi *breakout*, serta mengirimkan sinyal **BUY** & **EXIT WARNING** secara otomatis ke channel Telegram.
+
+---
+
+## Arsitektur & Fitur Utama
+
+- **Dual Timeframe Analysis (1D + 4H)**: Menggabungkan filter tren jangka panjang (Close > SMA20, SMA20 > SMA50, RSI > 50) pada timeframe Harian (1D) dengan pemicu entri presisi pada timeframe 4 Jam (4H).
+- **5-Factor Weighted Scoring System (0–100)**: Melakukan pemeringkatan otomatis berdasarkan 5 bobot indikator teknikal:
+  - *Breakout Strength (30%)*
+  - *1D Trend Alignment (20%)*
+  - *Volume Spike (20%)*
+  - *RSI Strength (15%)*
+  - *Volatility Quality (15%)*
+- **Risk & Money Management Engine**: Menghitung secara otomatis ukuran posisi (*position sizing / lot count*), titik *Stop Loss* (3%), dan target harga *Take Profit* (Risk-Reward Ratio 1:2) berdasarkan modal trading yang diinput.
+- **Bot Telegram Interaktif & Scheduled Scanner**: Dijalankan secara otomatis berbasis jadwal waktu pasar modal (08:45, 12:05, 15:40 WIB) menggunakan `node-cron`, serta membatasi maksimal 5 sinyal BUY terbaik per hari untuk mencegah *overtrading*.
+- **Batch Processing & Rate-Limiting**: Mampu memproses pemindaian data historis dan indikator untuk lebih dari 800 ticker saham BEI (`.JK`) secara efisien dengan manajemen antrean (*concurrency limit*).
+
+---
+
+## Focus Areas & Tech Stack
+
+- **Runtime & Language**: Node.js & TypeScript (ES6+)
+- **API & Data Ingestion**: Yahoo Finance API (Axios & Custom Rate Limiter)
+- **Notification Engine**: Telegram Bot API (`node-telegram-bot-api`)
+- **Scheduling & State**: `node-cron` & Persistent JSON State Tracking (`dailyState.json`)
+- **AI Integration**: Google Gemini API (Analisis Sentimen Berita Saham)
+- **Deployment Platform**: Railway / Docker Container Ready
