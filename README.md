@@ -1,93 +1,63 @@
-# Magic Portfolio
+# 🌟 Fauzi Hartanto – Personal Software Engineer Portfolio
 
-Magic Portfolio is a simple, clean, beginner-friendly portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
+Situs web portofolio pribadi **Fauzi Hartanto** — *Software Engineer, Web & Mobile Developer, dan CAD 3D Engineer* berbasis di DI Yogyakarta.
 
-View the demo [here](https://demo.magic-portfolio.com).
+Dikembangkan menggunakan **Next.js (App Router)**, **TypeScript**, dan **Once UI Design System** dengan fokus pada estetika monokrom modern, animasi meluncur *smooth Reveal*, serta pusat repositori berkas resmi yang interaktif.
 
-![Magic Portfolio](public/images/og/home.jpg)
+---
 
-Launch your portfolio on [Aveiro](https://www.aveiro.app/marketplace/spotlight), our managed publishing platform. Update case studies, blog posts and content through MCP from your favorite AI tools.
+## 🛠️ Tech Stack & Arsitektur Utama
 
-## Getting started
+- **Core Framework**: [Next.js](https://nextjs.org/) (App Router & React 19)
+- **Bahasa Pemrograman**: TypeScript, JavaScript (ES6+), PHP, Java, Python, MySQL
+- **Sistem Desain & CSS**: Custom CSS Tokens, Monokrom Modern, Bento Grid Layout
+- **Dokumentasi & Konten**: MDX & Dynamic Route Engine
+- **Animasi & Interaktivitas**: Smooth Scroll Reveal, Interactive PDF Lightbox Viewer, In-Place Card Expansion
 
-**1. Clone the repository**
-```
-git clone https://github.com/once-ui-system/magic-portfolio.git
-```
+---
 
-**2. Install dependencies**
-```
+## 🌟 Fitur Utama Portofolio
+
+1. **📄 Document Hub & Repository (`/documents`)**:
+   - Menampilkan 7 berkas PDF resmi (Curriculum Vitae, Portofolio Desain CAD 3D, SK Kerja PT. Pola Paperindo Evaluindo, Sertifikat Kepengurusan HMSI UTY, Sertifikat Magang Industri, Sertifikat Volunteer, dan Sertifikat TOEFL).
+   - Fitur **Pratinjau PDF Langsung (In-Place Inline Pop)** dengan *auto-scroll centering* ke tengah layar utama.
+
+2. **🛠️ Keahlian & Layanan Teknis (`/skills`)**:
+   - Kartu Bento Service: Web Applications (PHP/CI3), Mobile Development (Android Native Java), dan CAD 3D Modeling (Solid Edge & Jig/Fixture).
+   - Ringkasan Bahasa Pemrograman Utama (PHP, Java, Python, MySQL).
+
+3. **💼 Riwayat Pengalaman & Karir (`/experience`)**:
+   - Timeline Pengalaman Kerja Profesional (CAD & IT Staff PT. Pola Paperindo Evaluindo) serta Keorganisasian & Kepemimpinan (Himpunan Mahasiswa Informasi UTY & Tim Riset Teknologi).
+
+4. **🚀 Koleksi Proyek & Karya Utama (`/work`)**:
+   - Showcase proyek unggulan (AI Stock Signal Scanner, My Asset Tracker, Sistem Manajemen Inventaris Web, dan Aplikasi Kasgo Simpan Pinjam RT05).
+
+5. **🌓 Dukungan Dual Theme (Light & Dark Mode)**:
+   - Kontras tinggi dan keterbacaan 100% pada mode terang maupun mode gelap.
+
+---
+
+## 🚀 Cara Menjalankan Secara Lokal
+
+```bash
+# 1. Clone repositori
+git clone https://github.com/FauziHrtnt/fauzi_portofolio.git
+
+# 2. Masuk ke direktori proyek
+cd fauzi_portofolio
+
+# 3. Install dependensi
 npm install
-```
 
-**3. Run dev server**
-```
+# 4. Jalankan server pengembangan lokal
 npm run dev
 ```
 
-**4. Edit config**
-```
-src/resources/once-ui.config.js
-```
+Buka `http://localhost:3000` pada browser Anda untuk melihat tampilan portofolio.
 
-**5. Edit content**
-```
-src/resources/content.js
-```
+---
 
-**6. Create blog posts / projects**
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
-```
+## 📄 Lisensi & Hak Cipta
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
-
-## Documentation
-
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
-
-## Features
-
-### Once UI
-- All tokens, components & features of [Once UI](https://once-ui.com)
-
-### SEO
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
-
-### Design
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
-
-### Content
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
-
-### Localization
-- A localized, earlier version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
-
-## Creators
-
-Lorant One: [Threads](https://www.threads.net/@lorant.one) / [LinkedIn](https://www.linkedin.com/in/lorant-one/)
-
-## Get involved
-
-- Join the Design Engineers Club on [Discord](https://discord.com/invite/5EyAQ4eNdS) and share your project with us!
-- Deployed your docs? Share it on the [Once UI Hub](https://once-ui.com/hub) too! We feature our favorite apps on our landing page.
-
-## License
-
-Distributed under the CC BY-NC 4.0 License.
-- Attribution is required.
-- Commercial usage is not allowed.
-- You can extend the license to [Dopler CC](https://dopler.app/license) by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
-
-See `LICENSE.txt` for more information.
-
-## Deploy with Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+© 2026 **Fauzi Hartanto**. Hak Cipta Dilindungi Undang-Undang.  
+Dirilis di bawah [MIT License](LICENSE).
