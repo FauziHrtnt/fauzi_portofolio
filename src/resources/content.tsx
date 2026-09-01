@@ -365,7 +365,7 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/FBB-1.JPG",
+      src: "/images/gallery/FBB-1.jpg",
       alt: "Festival Bahasa dan Budaya (FBB UIN Sunan Kalijaga) – Panitia Logistik & Keperluan",
       orientation: "horizontal",
     },
