@@ -19,7 +19,7 @@ Dikembangkan menggunakan **Next.js (App Router)**, **TypeScript**, dan **Once UI
 ## 🌟 Fitur Utama Portofolio
 
 1. **📄 Document Hub & Repository (`/documents`)**:
-   - Menampilkan 7 berkas PDF resmi (Curriculum Vitae, Portofolio Desain CAD 3D, SK Kerja PT. Pola Paperindo Evaluindo, Sertifikat Kepengurusan HMSI UTY, Sertifikat Magang Industri, Sertifikat Volunteer, dan Sertifikat TOEFL).
+   - Menampilkan 7 berkas PDF resmi (Curriculum Vitae, Portofolio Desain CAD 3D, SK Kerja CV. Karya Hidup Sentosa, Sertifikat Kepengurusan HMSI UTY, Sertifikat Magang Industri, Sertifikat Volunteer, dan Sertifikat TOEFL).
    - Fitur **Pratinjau PDF Langsung (In-Place Inline Pop)** dengan *auto-scroll centering* ke tengah layar utama.
 
 2. **🛠️ Keahlian & Layanan Teknis (`/skills`)**:
@@ -27,7 +27,7 @@ Dikembangkan menggunakan **Next.js (App Router)**, **TypeScript**, dan **Once UI
    - Ringkasan Bahasa Pemrograman Utama (PHP, Java, Python, MySQL).
 
 3. **💼 Riwayat Pengalaman & Karir (`/experience`)**:
-   - Timeline Pengalaman Kerja Profesional (Production Engineering KHS & Programmer PT. Indo Techno Medic) serta Keorganisasian & Kepemimpinan (Himpunan Mahasiswa Informasi UTY & Tim Riset Teknologi).
+   - Timeline Pengalaman Kerja Profesional (Production Engineering CV. KHS & Programmer PT. Indo Techno Medic) serta Keorganisasian & Kepemimpinan (Himpunan Mahasiswa Informasi UTY & Tim Riset Teknologi).
 
 4. **🚀 Koleksi Proyek & Karya Utama (`/work`)**:
    - Showcase proyek unggulan (AI Stock Signal Scanner, My Asset Tracker, Sistem Manajemen Inventaris Web, dan Aplikasi Kasgo Simpan Pinjam RT05).
